@@ -1,0 +1,7 @@
+$vm = Get-VM -Name "Windows 2016"
+
+Get-Item c:\tmp\text.txt | Copy-VMGuestFile -Destination c:\tmp -VM $vm -LocalToGuest -GuestUser Administrator -GuestPassword Passwd123
+
+
+# alternativ
+#Copy-VMGuestFile -Source c:\text.txt -Destination c:\temp\ -VM VM -GuestToLocal -GuestUser user -GuestPassword pass2
