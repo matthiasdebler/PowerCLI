@@ -1,1 +1,7 @@
- Connect-VIServer vc01.e-zuku.de    # Connect a vcenter
+Connect-VIServer vc01.e-zuku.de    # Connect a vcenter
+Get-VM  Virtualmachine             # Status Virtual machine
+Start-VM                           # Start VM
+Stop-VM                            # Stop VM
+Stop-VMGuest                       # soft-stop VM
+Set-VM 
+
