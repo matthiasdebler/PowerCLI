@@ -1,0 +1,24 @@
+-------------- Example 1 --------------
+
+$myVM = Get-VM -Name "MyVM1"
+$drsCluster=Get-DatastoreCluster "MyDatastoreCluster"
+New-Template -VM $myVM -Name "MyTemplate" -Datastore $drsCluster -Location Datacenter2
+Creates a template named MyTemplate from the MyVM1 virtual machine and stores it in the MyDatastoreCluster datastore cluster in the Datacenter2 datacenter.
+
+-------------- Example 2 --------------
+
+$myFolder = Get-Folder -Name "MyFolder1"
+New-Template -Name "MyTemplate1" -TemplateFilePath "[Storage1] templatefolder/template.vmtx" -Location $myFolder -VMHost (Get-VMHost)
+Registers the existing MyTemplate1 template to a vCenter Server inventory folder by using the specified template file.
+
+-------------- Example 3 --------------
+
+$myTemplate = Get-Template -Name "MyTemplate1"
+$myDs = Get-Datastore -Name "MyDatastore1"
+New-Template -Template $myTemplate -Name "MyTemplate2" -Datastore $myDs -Location "Datacenter2"
+Creates the MyTemplate2 template by cloning an existing template and stores the new template in the specified datastore in the Datacenter2 datacenter.
+
+
+https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.powercli.cmdletref.doc%2FNew-Template.html
+
+https://www.windowspro.de/script/new-vm-virtuelle-maschinen-anlegen-vmware-powercli
