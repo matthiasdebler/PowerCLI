@@ -4,3 +4,11 @@ New-Template -VM "Windows2016" -Name "TemplateWindows2016" -Location 192.168.20.
 
 https://www.windowspro.de/script/get-vm-get-view-konfiguration-vms-untersuchen-powercli
 https://www.windowspro.de/script/get-vm-virtuelle-maschinen-vsphere-powercli-anzeigen-filtern
+
+
+----------------------------------------------------------------------------------------------------------------------
+https://www.michellelaverick.com/2014/06/back-to-basics-creating-and-deploying-templates-with-powercli-part-7/
+
+clear
+#Set-VM Windows2016 -ToTemplate  -Confirm:$false
+Set-Template -Template Windows2016 -ToVM
