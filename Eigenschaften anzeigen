@@ -1,0 +1,51 @@
+----------------------------------------------------------------------------------------
+Command: Get-View -ViewType VirtualMachine -Filter @{"Name"="Windows2016*"}
+
+Ausgabe:
+
+Capability           : VMware.Vim.VirtualMachineCapability
+Config               : VMware.Vim.VirtualMachineConfigInfo
+Layout               : VMware.Vim.VirtualMachineFileLayout
+LayoutEx             : VMware.Vim.VirtualMachineFileLayoutEx
+Storage              : VMware.Vim.VirtualMachineStorageInfo
+EnvironmentBrowser   : EnvironmentBrowser-envbrowser-39771
+ResourcePool         : ResourcePool-resgroup-15
+ParentVApp           : 
+ResourceConfig       : VMware.Vim.ResourceConfigSpec
+Runtime              : VMware.Vim.VirtualMachineRuntimeInfo
+Guest                : VMware.Vim.GuestInfo
+Summary              : VMware.Vim.VirtualMachineSummary
+Datastore            : {Datastore-datastore-62}
+Network              : {Network-network-67}
+Snapshot             : 
+RootSnapshot         : {}
+GuestHeartbeatStatus : green
+LinkedView           : 
+Parent               : Folder-group-v8
+CustomValue          : {}
+OverallStatus        : green
+ConfigStatus         : green
+ConfigIssue          : {}
+EffectiveRole        : {-1}
+Permission           : {}
+Name                 : Windows2016
+DisabledMethod       : {Destroy_Task, UnregisterVM, UnmountToolsInstaller, AnswerVM...}
+RecentTask           : {}
+DeclaredAlarmState   : {alarm-13.vm-39771, alarm-14.vm-39771, alarm-16.vm-39771, alarm-19.vm-39771...}
+TriggeredAlarmState  : {}
+AlarmActionsEnabled  : True
+Tag                  : {}
+Value                : {}
+AvailableField       : {}
+MoRef                : VirtualMachine-vm-39771
+Client               : VMware.Vim.VimClientImpl
+
+-------------------------------------------------------------------------------------------------------------
+
+Command: (Get-View -ViewType VirtualMachine -Filter @{"Name"="Windows2016*"}).Config.Files
+
+VmPathName          : [V3700_Datastore03] Windows2016/Windows2016.vmx
+SnapshotDirectory   : [V3700_Datastore03] Windows2016/
+SuspendDirectory    : [V3700_Datastore03] Windows2016/
+LogDirectory        : [V3700_Datastore03] Windows2016/
+FtMetadataDirectory : 
