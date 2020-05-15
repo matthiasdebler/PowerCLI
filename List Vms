@@ -1,0 +1,28 @@
+
+
+# List VMs
+#
+# Servername    Datastore   Folder Name
+# --------------------------------------------------
+# Server1            LUN0           ActiveDirectory
+# Server2            LUN0           ActiveDirectory
+# Server3            LUN1           ActiveDirectory              
+
+
+
+
+
+
+# Bildschirm
+Get-VM |
+Select Name,
+@{N="Datastore";E={[string]::Join(',',(Get-Datastore -Id $_.DatastoreIdList | Select -ExpandProperty Name))}},
+@{N="Folder";E={$_.Folder.Name}} 
+
+
+# CSV File
+Get-VM |
+Select Name,
+@{N="Datastore";E={[string]::Join(',',(Get-Datastore -Id $_.DatastoreIdList | Select -ExpandProperty Name))}},
+@{N="Folder";E={$_.Folder.Name}} |
+Export-Csv C:\report.csv -NoTypeInformation -UseCulture
