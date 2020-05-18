@@ -1,0 +1,16 @@
+
+
+# Template aus Muster VM erzeugen
+New-Template -Name "Windows 2016 Template new" -VM "Windows 2016"  -Location 192.168.20.160
+
+
+# VM mit neuen Parametern aus Template erzeugen
+# Namen der erzeugten VM setzen
+$NewName = "Windows 2016 neu erzeugt am"
+$NewDate = Get-Date -Format d-M-yyyy
+$NewMachineName = $NewName+" " + $NewDate
+New-VM -Name "$NewMachineName = $NewName" -Template "Windows 2016 Template new"  -VMHost 192.168.20.160
+
+
+# Template löschen
+Remove-Template -Template "Windows 2016 Template new" -Confirm:$false
