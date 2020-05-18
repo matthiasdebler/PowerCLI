@@ -32,24 +32,22 @@ Set-VM -VM $NewMachineName -Version v11 -Confirm:$false
 
 
 
+
+
 ------------------------------------------------------------------------------------------------------------
 Ausgabe
 
 
 
-
-
-
-
 Name                                              
 ----                                              
-Template Windows 2016 neu erzeugt  5-18-18-5-2020 
+Template Windows 2016 neu erzeugt  5-33-18-5-2020 
 
 PowerState              : PoweredOff
 Version                 : v11
 HardwareVersion         : vmx-11
 Notes                   : 
-Guest                   : Windows 2016 neu erzeugt  5-19-18-5-2020:
+Guest                   : Windows 2016 neu erzeugt  5-34-18-5-2020:
 NumCpu                  : 1
 CoresPerSocket          : 1
 MemoryMB                : 4096
@@ -61,7 +59,7 @@ FolderId                : Folder-group-v8
 Folder                  : vm
 ResourcePoolId          : ResourcePool-resgroup-15
 ResourcePool            : Resources
-PersistentId            : 5009c853-771f-510b-c781-ba6d48980736
+PersistentId            : 50094f69-1c2e-4f49-9dff-7644e9ab1e5d
 UsedSpaceGB             : 40,000013362616300582885742188
 ProvisionedSpaceGB      : 44,158877030014991760253906250
 DatastoreIdList         : {Datastore-datastore-128, Datastore-datastore-62}
@@ -72,18 +70,18 @@ VMSwapfilePolicy        : Inherit
 VMResourceConfiguration : CpuShares:Normal/1000 MemShares:Normal/40960
 GuestId                 : windows9Server64Guest
 CreateDate              : 13.05.2020 12:17:24
-Name                    : Windows 2016 neu erzeugt  5-19-18-5-2020
+Name                    : Windows 2016 neu erzeugt  5-34-18-5-2020
 CustomFields            : {}
 ExtensionData           : VMware.Vim.VirtualMachine
-Id                      : VirtualMachine-vm-40200
-Uid                     : /VIServer=wghler@vc01.inukunft.de:443/VirtualMachine=VirtualMachine-vm-40200/
+Id                      : VirtualMachine-vm-40202
+Uid                     : /VIServer=wghaler@vc01.ikunft.de:443/VirtualMachine=VirtualMachine-vm-40202/
 
 
 PowerState              : PoweredOn
 Version                 : v11
 HardwareVersion         : vmx-11
 Notes                   : 
-Guest                   : Windows 2016 neu erzeugt  5-19-18-5-2020:
+Guest                   : Windows 2016 neu erzeugt  5-34-18-5-2020:
 NumCpu                  : 1
 CoresPerSocket          : 1
 MemoryMB                : 4096
@@ -95,7 +93,7 @@ FolderId                : Folder-group-v8
 Folder                  : vm
 ResourcePoolId          : ResourcePool-resgroup-15
 ResourcePool            : Resources
-PersistentId            : 5009c853-771f-510b-c781-ba6d48980736
+PersistentId            : 50094f69-1c2e-4f49-9dff-7644e9ab1e5d
 UsedSpaceGB             : 44,159193050116300582885742188
 ProvisionedSpaceGB      : 44,159193649888038635253906250
 DatastoreIdList         : {Datastore-datastore-128, Datastore-datastore-62}
@@ -106,40 +104,37 @@ VMSwapfilePolicy        : Inherit
 VMResourceConfiguration : CpuShares:Normal/1000 MemShares:Normal/40960
 GuestId                 : windows9Server64Guest
 CreateDate              : 13.05.2020 12:17:24
-Name                    : Windows 2016 neu erzeugt  5-19-18-5-2020
+Name                    : Windows 2016 neu erzeugt  5-34-18-5-2020
 CustomFields            : {}
 ExtensionData           : VMware.Vim.VirtualMachine
-Id                      : VirtualMachine-vm-40200
-Uid                     : /VIServer=wer@vc01.int.frounft.de:443/VirtualMachine=VirtualMachine-vm-40200/
+Id                      : VirtualMachine-vm-40202
+Uid                     : /VIServer=wgbler@vc01.iunft.de:443/VirtualMachine=VirtualMachine-vm-40202/
 
 WARNUNG: Automatic update of VMware tools is not fully supported for non-Windows OSs. Manual intervention might be required.
 
-OSFullName        : 
-IPAddress         : {}
+OSFullName        : Microsoft Windows Server 2016 or later (64-bit)
+IPAddress         : {192.168.1.67, fe80::d4c9:d17b:b90:f838}
 State             : Running
-Disks             : 
-HostName          : 
-Nics              : 
+Disks             : {Capacity:42423283712, FreeSpace:30599168000, Path:C:\}
+HostName          : WIN-K4MENRD5GSH
+Nics              : {Network adapter 1:192.168.1.x}
 ScreenDimensions  : {Width=1024, Height=768}
-VmId              : VirtualMachine-vm-40200
-VM                : Windows 2016 neu erzeugt  5-19-18-5-2020
-VmUid             : /VIServer=er@vc01he-zuku.de:443/VirtualMachine=VirtualMachine-vm-40200/
-VmName            : Windows 2016 neu erzeugt  5-19-18-5-2020
-Uid               : /VIServer=ler@vc0e-zuk.de:443/VirtualMachine=VirtualMachine-vm-40200/VMGuest=/
-GuestId           : 
+VmId              : VirtualMachine-vm-40202
+VM                : Windows 2016 neu erzeugt  5-34-18-5-2020
+VmUid             : /VIServer=wghalle\debler@vc01.int.frohe-zukunft.de:443/VirtualMachine=VirtualMachine-vm-40202/
+VmName            : Windows 2016 neu erzeugt  5-34-18-5-2020
+Uid               : /VIServer=wghalle\gger@vc01.inzukunft.de:443/VirtualMachine=VirtualMachine-vm-40202/VMGuest=/
+GuestId           : windows9Server64Guest
 ConfiguredGuestId : windows9Server64Guest
-RuntimeGuestId    : 
+RuntimeGuestId    : windows9Server64Guest
 ToolsVersion      : 11.0.5
 ExtensionData     : VMware.Vim.GuestInfo
-GuestFamily       : 
+GuestFamily       : windowsGuest
 
-WARNUNG: The 'Version' parameter of 'Set-VM' cmdlet is deprecated. Use the 'HardwareVersion' parameter instead.
-Set-VM : 18.05.2020 17:26:06	Set-VM		The operation for the entity "Windows 2016 neu erzeugt  5-19-18-5-2020" failed with the following message: 
-"Virtual machine compatibility is already up-to-date."	
+Set-VM : 18.05.2020 17:41:25	Set-VM		The operation for the entity "Windows 2016 neu erzeugt  5-34-18-5-2020" failed with the following message: "The 
+operation is not supported on the object."	
 In Zeile:24 Zeichen:1
-+ Set-VM -VM $NewMachineName -Version v11 -Confirm:$false
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [Set-VM], AlreadyUpgraded
++ Set-VM -VM $NewMachineName -HardwareVersion v11 -Confirm:$false
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Set-VM], NotSupported
     + FullyQualifiedErrorId : Client20_TaskServiceImpl_CheckServerSideTaskUpdates_OperationFailed,VMware.VimAutomation.ViCore.Cmdlets.Commands.SetVM
- 
-Windows 2016 neu erzeugt  5-19-18-5-202
