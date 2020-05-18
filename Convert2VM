@@ -1,0 +1,27 @@
+# show Template 
+PS C:\Windows\system32> Get-Template Win*
+
+Name                                              
+----                                              
+Windows 2016                 
+
+#convert to VM
+PS C:\Windows\system32> Set-Template -Template "Windows 2016" -ToVM
+
+Name                 PowerState Num CPUs MemoryGB       
+----                 ---------- -------- --------       
+Windows 2016         PoweredOff 1        4,000        
+
+
+# show VM
+PS C:\Windows\system32> Get-VM Win*
+
+Name                 PowerState Num CPUs MemoryGB       
+----                 ---------- -------- --------       
+Windows 2016         PoweredOff 1        4,000          
+
+
+
+  
+ 
+                     
