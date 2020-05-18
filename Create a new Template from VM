@@ -1,0 +1,7 @@
+
+
+PS C:\Windows\system32> New-Template -Name "Windows 2016 New Template" -VM "Windows 2016 NEW" -Location 192.168.20.160
+
+Name                                              
+----                                              
+Windows 2016 New Template                         
