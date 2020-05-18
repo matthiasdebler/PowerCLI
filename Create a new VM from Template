@@ -1,0 +1,5 @@
+PS C:\Windows\system32> New-VM -Name "Windows 2016 NEW" -Template "Windows 2016"  -VMHost 192.168.20.160
+
+Name                 PowerState Num CPUs MemoryGB       
+----                 ---------- -------- --------       
+Windows 2016 NEW     PoweredOff 1        4,000 
