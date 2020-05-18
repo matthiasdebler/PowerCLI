@@ -1,0 +1,2 @@
+# Löschen ohne Abfrage
+Remove-Template -Template "Windows 2016" -Confirm:$false
