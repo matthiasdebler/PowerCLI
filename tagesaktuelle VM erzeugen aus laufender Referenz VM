@@ -1,4 +1,5 @@
-
+-------------------------------------------------------------------------------------------------------
+Code
 
 # Template aus Muster VM erzeugen
 New-Template -Name "Windows 2016 Template new" -VM "Windows 2016"  -Location 192.168.20.160
@@ -14,3 +15,67 @@ New-VM -Name "$NewMachineName = $NewName" -Template "Windows 2016 Template new" 
 
 # Template löschen
 Remove-Template -Template "Windows 2016 Template new" -Confirm:$false
+
+
+------------------------------------------------------------------------------------------------------------
+Ausgabe
+
+PS C:\Windows\system32> # Template aus Muster VM erzeugen
+New-Template -Name "Windows 2016 Template new" -VM "Windows 2016"  -Location 192.168.20.160
+
+
+# VM mit neuen Parametern aus Template erzeugen
+# Namen der erzeugten VM setzen
+$NewName = "Windows 2016 neu erzeugt am"
+$NewDate = Get-Date -Format d-M-yyyy
+$NewMachineName = $NewName+" " + $NewDate
+New-VM -Name "$NewMachineName = $NewName" -Template "Windows 2016 Template new"  -VMHost 192.168.20.160
+
+
+# Template löschen
+Remove-Template -Template "Windows 2016 Template new" -Confirm:$false
+
+
+
+Name                                              
+----                                              
+Windows 2016 Template new                         
+WARNUNG: The 'Version' property of VirtualMachine type is deprecated. Use the 'HardwareVersion' property instead.
+
+PowerState              : PoweredOff
+Version                 : v11
+HardwareVersion         : vmx-11
+Notes                   : 
+Guest                   : Windows 2016 neu erzeugt am 18-5-2020
+NumCpu                  : 1
+CoresPerSocket          : 1
+MemoryMB                : 4096
+MemoryGB                : 4
+VMHostId                : HostSystem-host-127
+VMHost                  : 192.168.20.160
+VApp                    : 
+FolderId                : Folder-group-v8
+Folder                  : vm
+ResourcePoolId          : ResourcePool-resgroup-15
+ResourcePool            : Resources
+PersistentId            : 5009f3b7-9562-7f1b-a584-2c8890841d4f
+UsedSpaceGB             : 40,000013463199138641357421875
+ProvisionedSpaceGB      : 44,158877180889248847961425781
+DatastoreIdList         : {Datastore-datastore-128, Datastore-datastore-62}
+HARestartPriority       : ClusterRestartPriority
+HAIsolationResponse     : AsSpecifiedByCluster
+DrsAutomationLevel      : AsSpecifiedByCluster
+VMSwapfilePolicy        : Inherit
+VMResourceConfiguration : CpuShares:Normal/1000 MemShares:Normal/40960
+GuestId                 : windows9Server64Guest
+CreateDate              : 13.05.2020 12:17:24
+Name                    : Windows 2016 neu erzeugt am 18-5-2020 = Windows 2016 neu erzeugt am
+CustomFields            : {}
+ExtensionData           : VMware.Vim.VirtualMachine
+Id                      : VirtualMachine-vm-40191
+Uid                     : /VIServer=wghalle\debler@vc01.int.frohe-zukunft.de:443/VirtualMachine=VirtualMachine-vm-40191/
+
+
+
+
+PS C:\Windows\system32> 
