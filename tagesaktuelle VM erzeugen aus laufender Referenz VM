@@ -2,51 +2,54 @@
 Code
 
 # Template aus Muster VM erzeugen
-New-Template -Name "Windows 2016 Template new" -VM "Windows 2016"  -Location 192.168.20.160
+$NewNameTemplate = "Template Windows 2016 neu erzeugt "
+$NewDate = Get-Date -Format h-m-d-M-yyyy
+$NewTemplateName = $NewNameTemplate + " " + $NewDate
+New-Template -Name $NewTemplateName -VM "Windows 2016 ReferenzVM"  -Location 192.168.20.160
 
 
 # VM mit neuen Parametern aus Template erzeugen
 # Namen der erzeugten VM setzen
-$NewName = "Windows 2016 neu erzeugt am"
-$NewDate = Get-Date -Format d-M-yyyy
-$NewMachineName = $NewName+" " + $NewDate
-New-VM -Name "$NewMachineName = $NewName" -Template "Windows 2016 Template new"  -VMHost 192.168.20.160
+$NewName = "Windows 2016 neu erzeugt "
+$NewDate = Get-Date -Format h-m-d-M-yyyy
+$NewMachineName = $NewName + " " + $NewDate
+New-VM -Name "$NewMachineName" -Template $NewTemplateName  -VMHost 192.168.20.160
 
 
 # Template löschen
-Remove-Template -Template "Windows 2016 Template new" -Confirm:$false
+Remove-Template -Template $NewTemplateName  -Confirm:$false
+
+# VMware Tools der neuen VM aktualisieren
+Start-VM $NewMachineName  | Wait-Tools
+Update-Tools -NoReboot $NewMachineName
+Shutdown-VMGuest $NewMachineName -Confirm:$false
+Sleep 300
+Set-VM -VM $NewMachineName -Version v11 -Confirm:$false
+
+
+
+
+
 
 
 ------------------------------------------------------------------------------------------------------------
 Ausgabe
 
-PS C:\Windows\system32> # Template aus Muster VM erzeugen
-New-Template -Name "Windows 2016 Template new" -VM "Windows 2016"  -Location 192.168.20.160
 
 
-# VM mit neuen Parametern aus Template erzeugen
-# Namen der erzeugten VM setzen
-$NewName = "Windows 2016 neu erzeugt am"
-$NewDate = Get-Date -Format d-M-yyyy
-$NewMachineName = $NewName+" " + $NewDate
-New-VM -Name "$NewMachineName = $NewName" -Template "Windows 2016 Template new"  -VMHost 192.168.20.160
 
-
-# Template löschen
-Remove-Template -Template "Windows 2016 Template new" -Confirm:$false
 
 
 
 Name                                              
 ----                                              
-Windows 2016 Template new                         
-WARNUNG: The 'Version' property of VirtualMachine type is deprecated. Use the 'HardwareVersion' property instead.
+Template Windows 2016 neu erzeugt  5-18-18-5-2020 
 
 PowerState              : PoweredOff
 Version                 : v11
 HardwareVersion         : vmx-11
 Notes                   : 
-Guest                   : Windows 2016 neu erzeugt am 18-5-2020
+Guest                   : Windows 2016 neu erzeugt  5-19-18-5-2020:
 NumCpu                  : 1
 CoresPerSocket          : 1
 MemoryMB                : 4096
@@ -58,9 +61,9 @@ FolderId                : Folder-group-v8
 Folder                  : vm
 ResourcePoolId          : ResourcePool-resgroup-15
 ResourcePool            : Resources
-PersistentId            : 5009f3b7-9562-7f1b-a584-2c8890841d4f
-UsedSpaceGB             : 40,000013463199138641357421875
-ProvisionedSpaceGB      : 44,158877180889248847961425781
+PersistentId            : 5009c853-771f-510b-c781-ba6d48980736
+UsedSpaceGB             : 40,000013362616300582885742188
+ProvisionedSpaceGB      : 44,158877030014991760253906250
 DatastoreIdList         : {Datastore-datastore-128, Datastore-datastore-62}
 HARestartPriority       : ClusterRestartPriority
 HAIsolationResponse     : AsSpecifiedByCluster
@@ -69,13 +72,74 @@ VMSwapfilePolicy        : Inherit
 VMResourceConfiguration : CpuShares:Normal/1000 MemShares:Normal/40960
 GuestId                 : windows9Server64Guest
 CreateDate              : 13.05.2020 12:17:24
-Name                    : Windows 2016 neu erzeugt am 18-5-2020 = Windows 2016 neu erzeugt am
+Name                    : Windows 2016 neu erzeugt  5-19-18-5-2020
 CustomFields            : {}
 ExtensionData           : VMware.Vim.VirtualMachine
-Id                      : VirtualMachine-vm-40191
-Uid                     : /VIServer=wghalle\debler@vc01.int.frohe-zukunft.de:443/VirtualMachine=VirtualMachine-vm-40191/
+Id                      : VirtualMachine-vm-40200
+Uid                     : /VIServer=wghler@vc01.inukunft.de:443/VirtualMachine=VirtualMachine-vm-40200/
 
 
+PowerState              : PoweredOn
+Version                 : v11
+HardwareVersion         : vmx-11
+Notes                   : 
+Guest                   : Windows 2016 neu erzeugt  5-19-18-5-2020:
+NumCpu                  : 1
+CoresPerSocket          : 1
+MemoryMB                : 4096
+MemoryGB                : 4
+VMHostId                : HostSystem-host-127
+VMHost                  : 192.168.20.160
+VApp                    : 
+FolderId                : Folder-group-v8
+Folder                  : vm
+ResourcePoolId          : ResourcePool-resgroup-15
+ResourcePool            : Resources
+PersistentId            : 5009c853-771f-510b-c781-ba6d48980736
+UsedSpaceGB             : 44,159193050116300582885742188
+ProvisionedSpaceGB      : 44,159193649888038635253906250
+DatastoreIdList         : {Datastore-datastore-128, Datastore-datastore-62}
+HARestartPriority       : ClusterRestartPriority
+HAIsolationResponse     : AsSpecifiedByCluster
+DrsAutomationLevel      : AsSpecifiedByCluster
+VMSwapfilePolicy        : Inherit
+VMResourceConfiguration : CpuShares:Normal/1000 MemShares:Normal/40960
+GuestId                 : windows9Server64Guest
+CreateDate              : 13.05.2020 12:17:24
+Name                    : Windows 2016 neu erzeugt  5-19-18-5-2020
+CustomFields            : {}
+ExtensionData           : VMware.Vim.VirtualMachine
+Id                      : VirtualMachine-vm-40200
+Uid                     : /VIServer=wer@vc01.int.frounft.de:443/VirtualMachine=VirtualMachine-vm-40200/
 
+WARNUNG: Automatic update of VMware tools is not fully supported for non-Windows OSs. Manual intervention might be required.
 
-PS C:\Windows\system32> 
+OSFullName        : 
+IPAddress         : {}
+State             : Running
+Disks             : 
+HostName          : 
+Nics              : 
+ScreenDimensions  : {Width=1024, Height=768}
+VmId              : VirtualMachine-vm-40200
+VM                : Windows 2016 neu erzeugt  5-19-18-5-2020
+VmUid             : /VIServer=er@vc01he-zuku.de:443/VirtualMachine=VirtualMachine-vm-40200/
+VmName            : Windows 2016 neu erzeugt  5-19-18-5-2020
+Uid               : /VIServer=ler@vc0e-zuk.de:443/VirtualMachine=VirtualMachine-vm-40200/VMGuest=/
+GuestId           : 
+ConfiguredGuestId : windows9Server64Guest
+RuntimeGuestId    : 
+ToolsVersion      : 11.0.5
+ExtensionData     : VMware.Vim.GuestInfo
+GuestFamily       : 
+
+WARNUNG: The 'Version' parameter of 'Set-VM' cmdlet is deprecated. Use the 'HardwareVersion' parameter instead.
+Set-VM : 18.05.2020 17:26:06	Set-VM		The operation for the entity "Windows 2016 neu erzeugt  5-19-18-5-2020" failed with the following message: 
+"Virtual machine compatibility is already up-to-date."	
+In Zeile:24 Zeichen:1
++ Set-VM -VM $NewMachineName -Version v11 -Confirm:$false
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Set-VM], AlreadyUpgraded
+    + FullyQualifiedErrorId : Client20_TaskServiceImpl_CheckServerSideTaskUpdates_OperationFailed,VMware.VimAutomation.ViCore.Cmdlets.Commands.SetVM
+ 
+Windows 2016 neu erzeugt  5-19-18-5-202
