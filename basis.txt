@@ -5,8 +5,15 @@ Stop-VM                            # Stop VM
 Stop-VMGuest                       # soft-stop VM
 Set-VM 
 
+
+
 Links:
+
+
+https://www.michellelaverick.com/2014/01/back-to-basics-configuring-standard-vswitch-with-powercli-part-three-of-three/
+https://www.michellelaverick.com/2014/02/back-to-basics-configuring-storage-powercli-part-6-of-6/
 https://www.michellelaverick.com/2014/06/back-to-basics-creating-and-deploying-templates-with-powercli-part-7/
+
 https://pubs.vmware.com/vsphere-51/index.jsp?topic=%2Fcom.vmware.powercli.cmdletref.doc%2FGet-Template.html
 http://www.techguy.at/powershell-get-date/
 https://riptutorial.com/de/powershell/example/20570/zeichenketten-verketten
