@@ -26,7 +26,8 @@ Shutdown-VMGuest $NewMachineName -Confirm:$false
 Sleep 300
 Set-VM -VM $NewMachineName -Version v11 -Confirm:$false
 
-
+#Parameter der erzeugten VM setzen 
+Get-VM $NewMachineName | Get-NetworkAdapter | Set-NetworkAdapter -NetworkName 192.168.20.x   -WakeOnLan:$true -Confirm:$false 
 
 
 
