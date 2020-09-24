@@ -1,0 +1,9 @@
+PowerCLI - Installationsanleitung 
+Quelle: https://servereye.freshdesk.com/support/solutions/articles/14000087373-powercli-installationsanleitung-mittels-powershell-gallery-
+
+
+Install-Module -Name "VMware.PowerCLI"  -Scope AllUsers
+Get-Module -ListAvailable
+import-module VMware.PowerCLI
+Set-PowerCLIConfiguration -invalidcertificateAction Ignore -Scope All
+UsersConnect-VIServer -Server SERVERNAME 
