@@ -1,0 +1,22 @@
+Quelle: https://vdc-repo.vmware.com/vmwb-repository/dcr-public/30553f09-0c9b-493d-afd9-99181a413777/48440a90-0199-4e65-bf93-026f7abab031/doc/GUID-812514A1-E0E6-49D4-AAFF-09B1B3F5B01B.html
+
+Get a List of Hosts on a vCenter Server System and View Their Properties
+With vSphere PowerCLI, you can get information about all available hosts in a datacenter and view their properties.
+Prerequisites
+Verify that you are connected to a vCenter Server system.
+Procedure
+1
+Get a list of all hosts that are part of a datacenter.
+Get-Datacenter DC | Get-VMHost | Format-Custom
+2
+View the properties of the first host in the datacenter.
+Get-Datacenter DC | Get-VMHost | Select-Object -First 1 | Format-Custom
+3
+View the Name and the OverallStatus properties of the hosts in the DC datacenter.
+Get-Datacenter DC | Get-VMHost | Get-View | Format-Table -Property Name, OverallStatus -AutoSize
+4
+View all hosts and their properties, and save the results to a file.
+Get-Datacenter DC | Get-VMHost | Format-Custom | Out-File –FilePath hosts.txt
+5
+View a list of the hosts that are in maintenance mode and can be configured for vMotion operations.
+Get-VMHost -State maintenance | Get-View | Where-Object -FilterScript { $_.capability -ne $null -and $_.capability.vmotionSupported }
